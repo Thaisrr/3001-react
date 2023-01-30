@@ -1,13 +1,103 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Quicksand&family=Roboto&display=swap');
+/* Style global
+- sur body, sur les titres
+- variables CSS
+- imports de font, ect...
+ */
+:root {
+  --main-font: 'Roboto', sans-serif;
+  --secondary-font: 'Quicksand', sans-serif;
+  --title-font: 'Comfortaa', cursive;
+
+  --dark: #264653ff;
+  --primary: #2a9d8fff;
+  --tertiary: #e9c46aff;
+  --secondary: #e76f51ff;
+  --light: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--dark);
+  font-family: var(--main-font);
+}
+
+.flex {
+  display: flex;
+  gap: 20px;
+}
+
+button {
+  background-color: var(--light);
+  color: var(--dark);
+  border: solid var(--dark) 1px;
+  border-radius: 3px;
+  padding: 5px 10px;
+  transition: all .25s ease-in;
+}
+
+button:hover {
+  background-color: var(--primary);
+  color: var(--light);
+  border-color: var(--primary);
+  cursor: pointer;
+}
+
+h1 {
+  color: var(--secondary);
+  font-family: var(--title-font);
+}
+
+h2 {
+  color: var(--primary);
+  font-family: var(--secondary-font);
+}
+
+main {
+  width: 80%;
+  margin: auto;
+}
+
+figure {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+figure img {
+  max-width: 100%;
+}
+
+footer {
+  border-top: 1px var(--dark);
+  padding: 50px 0;
+  text-align: center;
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+}
+.card {
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: rgba(128, 128, 128, 0.32) 2px 2px 8px;
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+button.active {
+  outline: 3px rgba(38, 70, 83, 0.3) solid;
+  background-color: var(--dark);
+  color: var(--light);
 }
