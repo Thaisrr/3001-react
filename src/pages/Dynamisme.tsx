@@ -22,6 +22,41 @@ const Dynamisme = () => {
     //const setReactiveCounter: Function = state[1]; // fonction de modification de la valeur
     const [reactiveCounter, setReactiveCounter] = useState(0);
 
+    const [name, setName] = useState('Jean Michel');
+
+    const updateName = (e: React.FormEvent) => {
+        e.preventDefault();
+        const form = e.target as HTMLFormElement;
+        // TODO : check l'interface pour solution + propre
+        const input = form['name'] as unknown as HTMLInputElement;
+        console.log(input.value);
+        setName(input.value);
+        form.reset();
+    }
+
+    const [fruits, setFruits] = useState(['Coings', 'Kiwi', 'Tomate']);
+
+    const addFruit = (new_fruit: string) => {
+        //const copy = Array.from(fruits);
+        const copy = [...fruits];
+        copy.push(new_fruit);
+        setFruits(copy);
+
+      //  setFruits([...fruits, new_fruit])
+    }
+
+    const removeFruit = (index: number) => {
+        const copy = [...fruits];
+        copy.splice(index, 1);
+        setFruits(copy);
+    }
+
+    const [book, setBook] = useState({
+        id: 1,
+        title: `L'Assassin Royal`,
+        author: 'Robin Hobb'
+    });
+
 
     return (
         <main className='Dynamisme'>
@@ -72,7 +107,6 @@ const Dynamisme = () => {
                     <button onClick={() => displayMessage('Holà')}>Holà</button>
                 </p>
             </section>
-
             <section>
                 <h2>Compteur</h2>
                 <p>Valeur : {counter}</p>
@@ -86,7 +120,6 @@ const Dynamisme = () => {
                 <p>React surveille les valeurs gérées par des Hooks, afin d'avoir un rendu et des mises à jours du DOM plus performantes.</p>
 
             </section>
-
             <section>
                 <h2>UseState : Hook d'état</h2>
 
@@ -105,6 +138,54 @@ const Dynamisme = () => {
                     <li>Une fonction au format : <code> {" (previous_state) => nouvelle valeur "} </code> ( paramétre : l'état actuel, retour : nouvelle valeur ).</li>
                 </ul>
                 <p>Le state ne doit <b>JAMAIS</b> être modifié directement, il faut toujours passer par la fonction.</p>
+            </section>
+            <section>
+                <h2>Type Primitif</h2>
+
+                <p>Bonjour {name}</p>
+
+                <form onSubmit={updateName}>
+                    <p>
+                        <label htmlFor='name'>Nom</label>
+                        <input name='name' id='name'/>
+                    </p>
+                    <button type='submit'>Save</button>
+                </form>
+            </section>
+            <section>
+                <h2>Tableau</h2>
+
+                <ul>
+                    { fruits.map((f, i) =>  (
+                        <li key={f + i}>
+                            [{f + i}]  {f}
+                            <button onClick={() => removeFruit(i)}>X</button>
+                        </li>
+                    ))}
+                </ul>
+
+                <p>
+                    <button onClick={() => addFruit('Pomme')}>Pomme</button>
+                    <button onClick={() => setFruits([...fruits, 'Poire'])}>Poire</button>
+                    <button onClick={() => setFruits((prev_fruits) => [...prev_fruits, 'Orange'])}>Orange</button>
+                </p>
+            </section>
+            <section>
+                <h2>Object</h2>
+
+                <ul>
+                    <li>Titre : {book.title}</li>
+                    <li>Auteur⋅trice : {book.author}</li>
+                </ul>
+
+                <p>
+                    <label htmlFor='title'>Titre</label>
+                    <input id="title" onChange={(e) => setBook({...book, title: e.target.value})}/>
+                </p>
+                <p>
+                    <label htmlFor='author'>Auteur⋅trice</label>
+                    <input id='author' onChange={(e) => setBook({...book, author: e.target.value})}/>
+                </p>
             </section>
 
         </main>

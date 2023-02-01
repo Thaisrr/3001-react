@@ -6,7 +6,14 @@ const Navigation = () => {
         {name: 'Présentation', path: '/'},
         {name: 'Conditionnel', path: '/affichage-conditionnel'},
         {name: 'Tableau', path: '/affichage-listes'},
-        {name: 'Réactivité', path: '/reactivity'}
+        {name: 'Réactivité', path: '/reactivity'},
+        {name: 'Props', path: '/props'},
+        {name: 'Formulaires', path: '/forms'},
+        {name: 'Classe', path: '/classe'},
+        {name: 'Cycle de Vie', path: '/life'},
+        {name: 'Memoization', path: '/memo'},
+        {name: 'Reducer', path: '/reducer'},
+        {name: 'Contexte', path: '/contexte'},
     ];
 
     return (
