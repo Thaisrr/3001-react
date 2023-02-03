@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import CycleChild from "../layout/CycleChild";
+import CycleChild from "../../layout/CycleChild";
 
 const LifeCycle = () => {
     console.log('%c Executing component function', "color: green; background: white");

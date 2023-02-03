@@ -1,0 +1,114 @@
+{
+  "users": [
+    {
+      "email": "toto@mail.com",
+      "password": "$2a$10$VpAGtBk4m5dFP0vgauf1j.B7s6eDdODqpjodCbLJ2cxJlzvrrsjxa",
+      "id": 1
+    },
+    {
+      "email": "toto@mail.fr",
+      "password": "$2a$10$ryZ9bNMRGnrGpipctGDbIO3LJBEjz634GUFL9B2dI10YMERYL04XS",
+      "id": 2
+    }
+  ],
+  "pokemons": [
+    {
+      "name": "Bulbizarre",
+      "image": "https://www.pokepedia.fr/images/thumb/0/09/Bulbizarre_de_Sacha.png/300px-Bulbizarre_de_Sacha.png",
+      "types": [
+        "Plante"
+      ],
+      "id": 1
+    },
+    {
+      "name": "Pikachu",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0RMMszMMutQX7s3nTWTHoH8HvSRjCXbp8Ht_rKygu1gu1lJ0QSGkyH3TbVdplxs2OtjI&usqp=CAU",
+      "types": [
+        "Electrique"
+      ],
+      "id": 2
+    },
+    {
+      "name": "Ponyta",
+      "image": "https://static1.millenium.org/articles/6/34/70/16/@/1167588-ponyta-galar-article_image_t-1.png",
+      "types": [
+        "Feu"
+      ],
+      "id": 3
+    }
+  ],
+  "types": [
+    {
+      "id": 1,
+      "name": "Eau"
+    },
+    {
+      "id": 2,
+      "name": "Feu"
+    },
+    {
+      "id": 3,
+      "name": "Air"
+    },
+    {
+      "id": 4,
+      "name": "Electrique"
+    },
+    {
+      "id": 5,
+      "name": "Psy"
+    },
+    {
+      "id": 6,
+      "name": "Fée"
+    },
+    {
+      "id": 7,
+      "name": "Acier"
+    },
+    {
+      "id": 8,
+      "name": "Combat"
+    },
+    {
+      "id": 9,
+      "name": "Glace"
+    },
+    {
+      "id": 10,
+      "name": "Insecte"
+    },
+    {
+      "id": 11,
+      "name": "Normal"
+    },
+    {
+      "id": 12,
+      "name": "Plante"
+    },
+    {
+      "id": 13,
+      "name": "Poison"
+    },
+    {
+      "id": 14,
+      "name": "Roche"
+    },
+    {
+      "id": 15,
+      "name": "Sol"
+    },
+    {
+      "id": 16,
+      "name": "Spectre"
+    },
+    {
+      "id": 17,
+      "name": "Ténébre"
+    },
+    {
+      "id": 18,
+      "name": "Vol"
+    }
+  ]
+}

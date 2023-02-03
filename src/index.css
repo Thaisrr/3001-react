@@ -121,3 +121,10 @@ button.active {
 }
 
 
+.candy {
+  color: var(--dark);
+  background-color: var(--tertiary);
+  border: solid 1px var(--secondary);
+  border-radius: 500px;
+  padding: 5px 10px;
+}

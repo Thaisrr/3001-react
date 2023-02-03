@@ -1,7 +1,10 @@
 import {NavLink} from "react-router-dom";
 import '../styles/Navigation.css';
+import {useLogout} from "../utils/hooks/UseAuth";
+import {useAppSelector} from "../utils/hooks/UseStore";
 
 const Navigation = () => {
+    const logout = useLogout();
     const links = [
         {name: 'Présentation', path: '/'},
         {name: 'Conditionnel', path: '/affichage-conditionnel'},
@@ -9,12 +12,32 @@ const Navigation = () => {
         {name: 'Réactivité', path: '/reactivity'},
         {name: 'Props', path: '/props'},
         {name: 'Formulaires', path: '/forms'},
-        {name: 'Classe', path: '/classe'},
-        {name: 'Cycle de Vie', path: '/life'},
-        {name: 'Memoization', path: '/memo'},
-        {name: 'Reducer', path: '/reducer'},
-        {name: 'Contexte', path: '/contexte'},
+        {name: 'Hooks', path: '/hooks'},
+        {name: 'Ajax', path: '/ajax'}
     ];
+
+    const LoggedIn = () => (
+        <>
+            <li>
+                <NavLink to='/pokedex'>Pokédex</NavLink>
+            </li>
+            <li>
+                <button onClick={() => logout()}>Logout</button>
+            </li>
+        </>
+    )
+
+    const Anonymous = () => (
+        <>
+            <li>
+                <NavLink to='/login'>Login</NavLink>
+            </li>
+        </>
+    )
+
+    /***** Store ********/
+    //const [isAuth, setIsAuth] = useState(isLogged());
+    const isAuth = useAppSelector(state => state.user.isLogged);
 
     return (
         <nav className='Nav'>
@@ -26,6 +49,7 @@ const Navigation = () => {
                         </li>
                     ))
                 }
+                {isAuth? <LoggedIn/> : <Anonymous/>}
             </ul>
         </nav>
     )
